@@ -1,22 +1,23 @@
 // DEPENDENCIES
 
-var path = require("path")
 var express = require("express");
+var path = require("path");
 
 // EXPRESS CONFIGURATION
 
 var app = express();
-var port = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
-// Data parsing set up
 
+// data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//ROUTER
 
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+// //ROUTER
+
+require("./app/routing/html-routes")(app);
+// require("./app/routing/api-routes")(app);
 
 // LISTENER
 
